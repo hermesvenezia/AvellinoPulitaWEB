@@ -1,0 +1,96 @@
+<html>
+<head>
+
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css\nav.css">
+<link rel="stylesheet" href="css\css.css">
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+<nav>
+  <div class="row">
+    <div class="quarter">
+      <a href="#home">
+        <img src="..\img\logo-icon.png" alt="">
+      </a>
+    </div>
+
+    <div class="rest">
+      <i class="fa fa-bars"></i>
+
+      <div class="text-menu">
+
+        <div>
+          <a href="programmaDifferenziata.html">Modifica Programma</a>
+        </div>
+
+        <span class="slash">/</span>
+
+        <div>
+          <a href="richiesteRaccoltaRifiuti.html">Richieste raccolte rifiuti </a>
+        </div>
+
+        <span class="slash">/</span>
+
+        <div><a href="#">Segnalazioni</a></div>
+
+        <span class="slash">/</span>
+
+        <div>
+          <a href="" id="logOut">Log Out</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ </nav>
+  <script>
+  // SEE IT IN DETAILS VIEW !
+
+$(document).ready(function() {
+    
+    console.log('Document ready');
+
+    $('.fa-bars').click(function() {
+        $('.text-menu').toggleClass('menu-appear');
+    });
+
+    $('nav .text-menu a').click(function() {
+        $('.text-menu').toggleClass('menu-appear');
+    });
+    
+});</script>
+<div class="segnalazione-class">
+	<div class="container" >
+    <ul class="collapsible z-depth-0 guides" style="border: none;" id="segnalazioni-list">
+     <!-- <li>
+        <div class="collapsible-header grey lighten-4">Segnalazione 1</div>
+        <div class="collapsible-body white"><p align="center"><img src="https://www.piueconomia.com/wp-content/uploads/2019/08/strada-ok.jpg" style="max-width:600px;max-height:600px"></p> <br>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.
+		Lorem ipsum dolor sit amet. <br> <p align="center"><button onClick="Elimina()">Elimina Segnalazione</button> </p></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Segnalazione 2 </div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Segnalazione 3</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Segnalazione 4</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li> --> 
+    </ul>
+  </div>
+</div>
+
+	<script src="scripts\auth-priv.js"></script>
+	<script src="scripts\segnalazioni.js"></script>
+</body>
+
+</html>

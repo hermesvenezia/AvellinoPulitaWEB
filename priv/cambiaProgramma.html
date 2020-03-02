@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+</head>
+<body>
+	<p align="center" id="giorno"></p><br>
+	<table border="0">
+	<tr>
+		<td>Multimateriale</td><td><input type="checkbox" id="1"></td>
+	</tr><tr>
+		<td>Vetro</td><td><input type="checkbox" id="2"></td>
+	</tr><tr>
+		<td>Organico</td><td><input type="checkbox" id="3"></td>
+	</tr><tr>
+		<td>Indifferenziato</td><td><input type="checkbox" id="4"></td>
+	</tr><tr>
+		<td>Carta e Cartone</td><td><input type="checkbox" id="5"></td>
+	</tr><tr>
+		<td colspan="22><p align="center"><input type="button" onClick="cambiaProgramma()" value="Modifica"></button></p></td>
+	</tr>
+
+<script>
+var config = {
+        apiKey: "AIzaSyD81zyKZYOC4t37-1tsjg4IiSvmkMw2e-U",
+		authDomain: "avellino-pulita.firebaseapp.com",
+		databaseURL: "https://avellino-pulita.firebaseio.com",
+		projectId: "avellino-pulita",
+		storageBucket: "avellino-pulita.appspot.com",
+		messagingSenderId: "479893718168",
+		appId: "1:479893718168:web:c6597a383a4d999be9fced",
+		measurementId: "G-J5JJ280NK0"
+    };
+    firebase.initializeApp(config); 
+	var database = firebase.firestore();
+	database.settings({ timestampsInSnapshots: true });
+var query = location.search;
+var pos = query.indexOf("=");
+var day = query.substring(pos+1,query.length);
+document.getElementById("giorno").innerHTML = day;
+function cambiaProgramma(){
+	var giorno = []; 
+	if (document.getElementById("1").checked){
+		giorno.push("Multimateriale");
+	}
+	if(document.getElementById("2").checked)
+		giorno.push("Vetro");
+	if(document.getElementById("3").checked)
+		giorno.push("Organico");
+	if(document.getElementById("4").checked)
+		giorno.push("Indifferenziato"); 
+	if(document.getElementById("5").checked)
+		giorno.push("Carta e Cartone");
+	switch(day){
+		case "Lunedi": 
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Lunedì: giorno});
+				break;
+		case "Martedi": 
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Martedì: giorno});
+				break; 
+		case "Mercoledi": 
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Mercoledì: giorno});
+				break; 
+		case "Giovedi":
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Giovedì: giorno});
+				break;
+		case "Venerdi": 
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Venerdì: giorno});
+				break; 
+		case "Sabato": 
+				database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Sabato: giorno});
+				break; 
+		case "Domenica": 
+					database.collection('programmaRaccolta').doc('o8GvKyplciY400fuTfFl').update({Domenica: giorno});
+				break; 
+		}
+	}
+</script>
+</body>
+</html>

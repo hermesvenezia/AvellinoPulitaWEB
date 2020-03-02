@@ -1,0 +1,106 @@
+<html>
+<head>
+
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css\nav.css">
+<link rel="stylesheet" href="css\css.css">
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+<nav>
+  <div class="row">
+    <div class="quarter">
+      <a href="#home">
+        <img src="..\img\logo-icon.png" alt="">
+      </a>
+    </div>
+
+    <div class="rest">
+      <i class="fa fa-bars"></i>
+
+      <div class="text-menu">
+
+        <div>
+          <a href="programmaDifferenziata.html">Modifica Programma</a>
+        </div>
+
+        <span class="slash">/</span>
+
+        <div>
+          <a href="richiesteRaccoltaRifiuti.html">Richieste raccolte rifiuti </a>
+        </div>
+
+        <span class="slash">/</span>
+
+        <div><a href="segnalazioni.html">Segnalazioni</a></div>
+
+        <span class="slash">/</span>
+
+        <div>
+          <a href="" id="logOut">Log Out</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+ </nav>
+  <script>
+  // SEE IT IN DETAILS VIEW !
+
+$(document).ready(function() {
+    
+    console.log('Document ready');
+
+    $('.fa-bars').click(function() {
+        $('.text-menu').toggleClass('menu-appear');
+    });
+
+    $('nav .text-menu a').click(function() {
+        $('.text-menu').toggleClass('menu-appear');
+    });
+    
+});</script>
+	
+	<div class="container" >
+    <ul class="collapsible z-depth-0 guides" style="border: none;" id="programma-list">
+     <!--<li>
+        <div class="collapsible-header grey lighten-4">Lunedì</div>
+        <div class="collapsible-body white">Lorem Ipsum sum</div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Martedì</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Mercoledì</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4">Giovedì</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>  
+	  <li>
+        <div class="collapsible-header grey lighten-4">Venerdì</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li> 
+	  <li>
+        <div class="collapsible-header grey lighten-4">Sabato</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li> 
+	  <li>
+        <div class="collapsible-header grey lighten-4">Domenica</div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li> -->
+	  	
+    </ul>
+  </div>
+	<script src="scripts\auth-priv.js"></script>
+	<script src="scripts\programmaDifferenziata.js"></script>
+</body>
+
+</html>
